@@ -36,7 +36,7 @@ class ITSElementBuilder {
 
   // Elements
   static openButton({ onClick }) {
-    const button = ITSElementBuilder.baseButton('🔯选择标记', { size: 'sm', color: 'secondary' })
+    const button = ITSElementBuilder.baseButton('🔯タグを選択', { size: 'sm', color: 'secondary' })
     button.style = 'margin-top: 0.5rem;'
     button.addEventListener('click', onClick)
 
@@ -79,7 +79,7 @@ class ITSElementBuilder {
     select.style.margin = '2px'
     select.addEventListener('change', (event) => { onChange(event.target.value) })
 
-    const none = ['空']
+    const none = ['なし']
     none.concat(options).forEach((key) => {
       const option = document.createElement('option')
       option.value = key
@@ -167,7 +167,7 @@ class InteractiveTagSelector {
     row.appendChild(dropDown)
 
     const settings = document.createElement('div')
-    const checkbox = ITSElementBuilder.checkbox('负面提示中输入', {
+    const checkbox = ITSElementBuilder.checkbox('ネガティブプロンプトに入力', {
       onChange: (checked) => { this.toNegative = checked }
     })
     settings.style.flex = '1'
